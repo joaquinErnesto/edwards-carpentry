@@ -1,0 +1,107 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 48px;
+  padding: 32px;
+  border-radius: var(--radius-xl);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  box-shadow: var(
+    --shadow-xl,
+    0 12px 30px rgba(0, 0, 0, 0.15)
+  );
+}
+
+.watermark {
+  position: absolute;
+  right: -40px;
+  bottom: -40px;
+  color: var(--color-on-primary);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 672px;
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 4px 12px;
+  border-radius: var(--radius-default);
+  background: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed);
+  font: 700 12px/16px var(--font-body);
+  letter-spacing: 0.1em;
+}
+
+.content h3 {
+  margin: 0 0 16px;
+  font: 700 32px/40px var(--font-display);
+}
+
+.content p {
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.9);
+  font: 400 18px/28px var(--font-body);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.primaryButton,
+.outlineButton {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: var(--radius-xl);
+  font: 700 12px/16px var(--font-body);
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.primaryButton {
+  border: 0;
+  background: var(--color-surface-container-lowest);
+  color: var(--color-primary);
+  box-shadow: var(
+    --shadow-md,
+    0 4px 12px rgba(0, 0, 0, 0.12)
+  );
+}
+
+.primaryButton:hover {
+  background: var(--color-surface-container);
+}
+
+.outlineButton {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: var(--color-on-primary);
+}
+
+.outlineButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .actions > * {
+    width: 100%;
+  }
+}

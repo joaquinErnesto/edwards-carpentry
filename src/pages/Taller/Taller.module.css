@@ -1,0 +1,35 @@
+.page {
+  --workshop-primary: #442a22;
+  --workshop-primary-container: #5d4037;
+  --workshop-primary-fixed: #ffdbd0;
+  --workshop-primary-fixed-dim: #e7bdb1;
+
+  --workshop-secondary: #75584d;
+
+  --workshop-surface: #f9f9f9;
+  --workshop-surface-container-low: #f3f3f3;
+  --workshop-surface-container: #eeeeee;
+  --workshop-surface-container-high: #e8e8e8;
+  --workshop-surface-container-highest: #e2e2e2;
+
+  --workshop-on-primary: #ffffff;
+  --workshop-on-primary-container: #f0e0dc;
+  --workshop-on-surface: #1a1c1c;
+  --workshop-on-surface-variant: #504441;
+
+  --workshop-outline: #827470;
+  --workshop-outline-variant: #d4c3be;
+
+  --workshop-divider: rgba(38, 50, 56, 0.1);
+
+  --workshop-shadow:
+    0 10px 30px -5px rgba(93, 64, 55, 0.15);
+
+  min-height: 100%;
+  overflow-x: hidden;
+
+  color: var(--workshop-on-surface);
+
+  background-color: var(--workshop-surface);
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+}

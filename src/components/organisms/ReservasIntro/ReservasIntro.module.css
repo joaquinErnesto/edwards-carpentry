@@ -1,0 +1,50 @@
+.intro {
+  max-width: 672px;
+}
+
+.title {
+  margin: 0 0 24px;
+
+  color: var(--reservas-primary);
+
+  font-family: var(
+    --font-display,
+    "Source Serif 4",
+    serif
+  );
+
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+
+  letter-spacing: -0.02em;
+}
+
+.description {
+  max-width: 576px;
+
+  margin: 0;
+
+  color: var(--reservas-on-surface-variant);
+
+  font-family: var(
+    --font-body,
+    "Work Sans",
+    sans-serif
+  );
+
+  font-size: 18px;
+  line-height: 28px;
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .description {
+    font-size: 17px;
+    line-height: 27px;
+  }
+}

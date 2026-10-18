@@ -1,0 +1,138 @@
+.map {
+  position: relative;
+
+  width: 100%;
+  height: 320px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--reservas-outline-variant);
+  border-radius: 8px;
+
+  box-shadow: var(--reservas-shadow);
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+
+  font-family: var(--font-body);
+}
+
+.canvas :global(.leaflet-tile-pane) {
+  filter: saturate(0.55) contrast(1.05);
+}
+
+.canvas :global(.leaflet-control-attribution) {
+  font-size: 10px;
+
+  color: var(--reservas-outline);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.canvas :global(.leaflet-popup-content-wrapper) {
+  border-radius: 8px;
+
+  color: var(--reservas-on-surface);
+  box-shadow: var(--reservas-shadow);
+}
+
+.canvas :global(.leaflet-popup-content) {
+  margin: 10px 12px;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.zonePin {
+  pointer-events: none;
+}
+
+.zonePin span {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  transform: translate(-50%, -50%);
+
+  padding: 2px 8px;
+
+  border-radius: 999px;
+
+  color: var(--reservas-on-surface);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--reservas-outline-variant);
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.workshopPin {
+  background: transparent;
+  border: none;
+}
+
+.workshopPin :global(.glyph) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 999px;
+
+  color: var(--reservas-on-primary-container);
+  background: var(--reservas-primary-container);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+  font-family: "Material Symbols Outlined";
+  font-feature-settings: "liga";
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+
+  font-size: 24px;
+  line-height: 1;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+.directions {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  z-index: 500;
+
+  padding: 4px 10px;
+
+  border-radius: 999px;
+
+  color: var(--reservas-on-primary-container);
+  background: var(--reservas-primary-container);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.directions:hover {
+  background: var(--reservas-primary);
+}

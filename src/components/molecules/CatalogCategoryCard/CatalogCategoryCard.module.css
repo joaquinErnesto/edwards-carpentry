@@ -1,0 +1,122 @@
+.card {
+  position: relative;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-xl);
+  background: var(--color-surface-container-lowest);
+  color: inherit;
+  text-align: left;
+  box-shadow: var(
+    --shadow-sm,
+    0 1px 2px rgba(0, 0, 0, 0.08)
+  );
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(
+    --shadow-xl,
+    0 12px 30px rgba(0, 0, 0, 0.12)
+  );
+}
+
+.decorative {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: 0 0 0 100%;
+  background: color-mix(
+    in srgb,
+    var(--color-primary-fixed) 30%,
+    transparent
+  );
+  transition: transform 0.3s ease;
+}
+
+.card:hover .decorative {
+  transform: scale(1.25);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.works {
+  padding: 4px 10px;
+  border-radius: var(--radius-default);
+  background: var(--color-surface-container);
+  color: var(--color-on-surface-variant);
+  font: 700 12px/16px var(--font-body);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.name {
+  color: var(--color-primary);
+  font: 700 24px/32px var(--font-display);
+  margin-bottom: 8px;
+}
+
+.card:hover .name {
+  color: var(--color-secondary);
+}
+
+.description {
+  color: var(--color-on-surface-variant);
+  font: 400 14px/24px var(--font-body);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 20px -20px -20px;
+  padding: 12px 20px;
+  background: var(--color-surface-container-low);
+  color: var(--color-secondary);
+  font: 700 12px/16px var(--font-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer svg,
+.footer span:last-child {
+  transition: transform 0.2s ease;
+}
+
+.card:hover .footer > span:last-child {
+  transform: translateX(4px);
+}
+
+.featured .works {
+  background: var(--color-secondary-fixed);
+  color: var(--color-on-secondary-fixed);
+}

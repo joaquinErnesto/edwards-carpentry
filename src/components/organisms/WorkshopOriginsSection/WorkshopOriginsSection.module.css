@@ -1,0 +1,113 @@
+.section {
+  padding-top: 96px;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px 64px;
+
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+
+  color: var(--workshop-primary);
+  font-family: var(--font-display, "Source Serif 4", serif);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 0;
+
+  color: var(--workshop-primary);
+  font-family: var(--font-display, "Source Serif 4", serif);
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.closingCopy {
+  padding-top: 64px;
+  padding-bottom: 96px;
+}
+
+.closing {
+  margin: 0;
+
+  max-width: 760px;
+
+  color: var(--workshop-on-surface-variant);
+  font-family: var(--font-body, "Work Sans", sans-serif);
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: clamp(320px, 34vw, 560px);
+
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .copy {
+    padding: 48px 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding-top: 72px;
+  }
+
+  .copy {
+    gap: 12px;
+    padding: 40px 20px;
+  }
+
+  .title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .subtitle {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .closing {
+    font-size: 17px;
+    line-height: 28px;
+  }
+
+  .closingCopy {
+    padding-top: 48px;
+    padding-bottom: 72px;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .image {
+    height: clamp(240px, 62vw, 420px);
+  }
+}

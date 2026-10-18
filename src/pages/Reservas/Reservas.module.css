@@ -1,0 +1,71 @@
+.page {
+  --reservas-secondary: #75584d;
+
+  --reservas-primary: #442a22;
+  --reservas-primary-container: #5d4037;
+
+  --reservas-primary-fixed: #ffdbd0;
+  --reservas-primary-fixed-dim: #e7bdb1;
+
+  --reservas-surface: #f9f9f9;
+  --reservas-surface-container-lowest: #ffffff;
+  --reservas-surface-container-low: #f3f3f3;
+  --reservas-surface-container: #eeeeee;
+  --reservas-surface-container-high: #e8e8e8;
+  --reservas-surface-container-highest: #e2e2e2;
+
+  --reservas-on-primary: #ffffff;
+  --reservas-on-primary-container: #f0e0dc;
+
+  --reservas-on-surface: #1a1c1c;
+  --reservas-on-surface-variant: #504441;
+
+  --reservas-outline: #827470;
+  --reservas-outline-variant: #d4c3be;
+
+  --reservas-shadow:
+    0 10px 30px -10px rgba(93, 64, 55, 0.15);
+
+  min-height: 100%;
+
+  overflow-x: hidden;
+
+  color: var(--reservas-on-surface);
+
+  background-color: var(--reservas-surface);
+
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+}
+
+.main {
+  position: relative;
+}
+
+.main::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+
+  opacity: 0.05;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 0 0 48px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(93, 64, 55, 0.2),
+    transparent
+  );
+}

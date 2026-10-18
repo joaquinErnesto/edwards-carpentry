@@ -1,0 +1,31 @@
+.select {
+  width: 100%;
+
+  padding: 12px 0;
+
+  border: 0;
+  border-bottom: 2px solid rgba(141, 110, 99, 0.2);
+
+  outline: none;
+
+  appearance: none;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  color: var(--reservas-on-surface);
+  background: transparent;
+
+  font-family: var(--font-body, "Work Sans", sans-serif);
+  font-size: 16px;
+  line-height: 24px;
+
+  cursor: pointer;
+
+  transition: border-color 200ms ease;
+}
+
+.select:focus {
+  border-bottom-color: #8d6e63;
+}

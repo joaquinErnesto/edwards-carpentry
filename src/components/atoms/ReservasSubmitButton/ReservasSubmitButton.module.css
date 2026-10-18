@@ -1,0 +1,48 @@
+.button {
+  width: 100%;
+
+  min-height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 20px;
+
+  border: 0;
+  border-radius: 4px;
+
+  color: var(--reservas-on-primary);
+  background: var(--reservas-primary);
+
+  font-family: var(--font-body, "Work Sans", sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+
+  letter-spacing: 0.1em;
+
+  cursor: pointer;
+
+  transition:
+    background-color 300ms ease,
+    transform 150ms ease,
+    opacity 200ms ease;
+}
+
+.button:hover:not(:disabled) {
+  background: var(--reservas-primary-container);
+}
+
+.button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.button:disabled {
+  cursor: default;
+}
+
+.success {
+  background: var(--reservas-secondary);
+}

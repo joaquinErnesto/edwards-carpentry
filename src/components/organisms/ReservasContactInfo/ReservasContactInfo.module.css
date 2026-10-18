@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.whatsappItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.whatsappIconBox {
+  flex-shrink: 0;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+
+  color: var(--reservas-primary-container);
+  background: var(--reservas-surface-container);
+}
+
+.whatsappTitle {
+  margin: 1px 0 8px;
+
+  color: var(--reservas-secondary);
+
+  font-family: var(--font-body, "Work Sans", sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+
+  letter-spacing: 0.1em;
+}
+
+.whatsappButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 4px;
+
+  padding: 12px 24px;
+
+  border-radius: 999px;
+
+  color: #ffffff;
+  background: #25d366;
+
+  font-family: var(--font-body, "Work Sans", sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+
+  letter-spacing: 0.1em;
+  text-decoration: none;
+
+  transition:
+    box-shadow 200ms ease,
+    transform 150ms ease;
+}
+
+.whatsappButton:hover {
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+}
+
+.whatsappButton:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .whatsappButton {
+    padding: 11px 16px;
+    font-size: 11px;
+  }
+}

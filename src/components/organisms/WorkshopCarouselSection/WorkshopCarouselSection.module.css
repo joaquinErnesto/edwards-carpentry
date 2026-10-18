@@ -1,0 +1,336 @@
+.section {
+  padding: 96px 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+.header {
+  max-width: 760px;
+
+  margin-bottom: 48px;
+}
+
+.title {
+  margin: 16px 0 20px;
+
+  color: var(--workshop-primary);
+  font-family: var(--font-display, "Source Serif 4", serif);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.lead {
+  margin: 0;
+
+  color: var(--workshop-on-surface-variant);
+  font-family: var(--font-body, "Work Sans", sans-serif);
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.carousel {
+  outline: none;
+}
+
+.figure {
+  margin: 0;
+
+  overflow: hidden;
+
+  background: var(--workshop-surface-container);
+
+  box-shadow: var(--workshop-shadow);
+}
+
+.stage {
+  position: relative;
+
+  height: clamp(360px, 44vw, 540px);
+
+  overflow: hidden;
+
+  background: var(--workshop-surface-container-high);
+}
+
+.backdrop {
+  position: absolute;
+  inset: -32px;
+
+  background-position: center;
+  background-size: cover;
+
+  filter: blur(32px) saturate(1.15) brightness(0.94);
+  transform: scale(1.08);
+}
+
+.image {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  animation: workshopFade 500ms ease;
+}
+
+.grainOverlay {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.03;
+
+  background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+}
+
+.stepBadge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  padding: 8px 14px;
+
+  background: rgba(249, 249, 249, 0.92);
+  backdrop-filter: blur(10px);
+
+  color: var(--workshop-primary);
+
+  font-family: var(--font-body, "Work Sans", sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.14em;
+}
+
+.caption {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 18px 24px;
+
+  border-top: 1px solid var(--workshop-divider);
+
+  background: var(--workshop-surface);
+}
+
+.captionStep {
+  flex-shrink: 0;
+
+  color: var(--workshop-primary);
+  font-family: var(--font-body, "Work Sans", sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.14em;
+}
+
+.captionText {
+  color: var(--workshop-on-surface);
+  font-family: var(--font-body, "Work Sans", sans-serif);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 24px;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 0;
+
+  border: 1px solid var(--workshop-outline-variant);
+  border-radius: var(--radius-xl);
+
+  background: transparent;
+
+  color: var(--workshop-primary);
+
+  cursor: pointer;
+
+  transition:
+    background 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+.arrow:hover {
+  border-color: var(--workshop-primary);
+
+  background: var(--workshop-primary);
+
+  color: var(--workshop-on-primary);
+}
+
+.arrow:focus-visible {
+  outline: 2px solid var(--workshop-primary);
+  outline-offset: 2px;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-right: auto;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: var(--workshop-outline-variant);
+
+  cursor: pointer;
+
+  transition:
+    width 250ms ease,
+    background 250ms ease;
+}
+
+.dot:hover {
+  background: var(--workshop-secondary);
+}
+
+.dot:focus-visible {
+  outline: 2px solid var(--workshop-primary);
+  outline-offset: 3px;
+}
+
+.dotActive,
+.dotActive:hover {
+  width: 28px;
+
+  border-radius: var(--radius-full);
+
+  background: var(--workshop-primary);
+}
+
+.counter {
+  flex-shrink: 0;
+
+  color: var(--workshop-on-surface-variant);
+  font-family: var(--font-body, "Work Sans", sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.14em;
+
+  font-variant-numeric: tabular-nums;
+}
+
+.counterDivider {
+  margin: 0 6px;
+
+  color: var(--workshop-outline);
+}
+
+@keyframes workshopFade {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1023px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  .stage {
+    height: clamp(300px, 56vw, 460px);
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .header {
+    margin-bottom: 32px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .lead {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .stage {
+    height: 300px;
+  }
+
+  .stepBadge {
+    top: 12px;
+    left: 12px;
+
+    padding: 6px 12px;
+
+    font-size: 11px;
+  }
+
+  .caption {
+    gap: 12px;
+
+    padding: 14px 16px;
+  }
+
+  .captionText {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .controls {
+    gap: 12px;
+
+    margin-top: 16px;
+  }
+
+  .arrow {
+    width: 40px;
+    height: 40px;
+  }
+}

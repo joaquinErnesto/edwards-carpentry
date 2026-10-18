@@ -1,0 +1,47 @@
+.section {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 96px 64px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 64px;
+
+  align-items: start;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+@media (max-width: 1023px) {
+  .section {
+    padding: 80px 32px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 64px 20px;
+  }
+
+  .leftColumn {
+    gap: 40px;
+  }
+}

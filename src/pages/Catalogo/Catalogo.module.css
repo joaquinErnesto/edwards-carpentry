@@ -1,0 +1,6 @@
+.page {
+  position: relative;
+  width: 100%;
+  background: var(--color-background);
+  color: var(--color-on-surface);
+}

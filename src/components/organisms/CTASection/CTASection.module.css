@@ -1,0 +1,92 @@
+.section {
+  padding: 96px 0;
+}
+
+.card {
+  position: relative;
+
+  padding: 64px;
+
+  overflow: hidden;
+
+  background-color:
+    var(--color-primary-container);
+
+  border-radius: var(--radius-xl);
+}
+
+.pattern {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.1;
+
+  background-image:
+    url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 24px;
+
+  color: var(--color-on-primary);
+
+  font-family: var(--font-display);
+
+  font-size: var(--font-size-headline-lg);
+  line-height: var(--line-height-headline-lg);
+
+  font-weight: 600;
+}
+
+.description {
+  max-width: 672px;
+
+  margin:
+    0
+    auto
+    40px;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body-lg);
+}
+
+.actions {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 40px 24px;
+  }
+
+  .title {
+    font-size:
+      var(--font-size-headline-lg-mobile);
+
+    line-height:
+      var(--line-height-headline-lg-mobile);
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}

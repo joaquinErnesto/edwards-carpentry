@@ -1,0 +1,14 @@
+.notice {
+  margin: 24px 0 0;
+
+  text-align: center;
+
+  color: var(--reservas-outline);
+
+  font-family: var(--font-body, "Work Sans", sans-serif);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+
+  letter-spacing: 0.1em;
+}

@@ -1,0 +1,63 @@
+.card {
+  position: relative;
+
+  min-width: 320px;
+
+  padding: 32px;
+
+  background-color:
+    var(--color-surface-container-lowest);
+
+  border: var(--border-workbench);
+
+  box-shadow: var(--shadow-mahogany);
+
+  scroll-snap-align: center;
+}
+
+.quoteIcon {
+  position: absolute;
+
+  top: 16px;
+  right: 32px;
+
+  color: var(--color-primary-fixed-dim);
+
+  opacity: 0.2;
+}
+
+.quote {
+  margin: 16px 0 24px;
+
+  color: var(--color-on-surface);
+
+  font-size: var(--font-size-body-md);
+  line-height: var(--line-height-body-md);
+
+  font-style: italic;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.customer {
+  color: var(--color-primary);
+
+  font-size: var(--font-size-label);
+  line-height: var(--line-height-label);
+
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.location {
+  color: var(--color-outline);
+
+  font-size: 12px;
+  line-height: 16px;
+}

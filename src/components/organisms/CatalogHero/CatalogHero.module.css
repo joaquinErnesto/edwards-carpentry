@@ -1,0 +1,128 @@
+.section {
+  position: relative;
+  width: 100%;
+  padding: 48px 0 64px;
+  overflow: hidden;
+}
+
+.ambientTop {
+  position: absolute;
+  top: -160px;
+  right: 40px;
+  width: 384px;
+  height: 384px;
+  border-radius: 50%;
+  background: color-mix(
+    in srgb,
+    var(--color-primary-fixed-dim) 20%,
+    transparent
+  );
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+.ambientLeft {
+  position: absolute;
+  top: 384px;
+  left: -128px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: color-mix(
+    in srgb,
+    var(--color-secondary-container) 30%,
+    transparent
+  );
+  filter: blur(48px);
+  pointer-events: none;
+}
+
+.meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--color-primary-container);
+  color: var(--color-on-primary);
+  font: 700 12px/16px var(--font-body);
+  letter-spacing: 0.1em;
+}
+
+.metaText,
+.categories {
+  color: var(--color-on-surface-variant);
+  font: 700 12px/16px var(--font-body);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.categories {
+  color: var(--color-secondary);
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-outline);
+}
+
+.heroGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.title {
+  margin: 0 0 16px;
+  color: var(--color-primary);
+  font: 700 48px/56px var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.description {
+  max-width: 768px;
+  margin: 0;
+  color: var(--color-on-surface-variant);
+  font: 400 18px/28px var(--font-body);
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 1024px) {
+  .heroGrid {
+    grid-template-columns:
+      repeat(12, 1fr);
+  }
+
+  .heroGrid > div:first-child {
+    grid-column: span 8;
+  }
+
+  .stats {
+    grid-column: span 4;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}

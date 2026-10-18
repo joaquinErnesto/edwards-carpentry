@@ -1,0 +1,66 @@
+.card {
+  position: relative;
+
+  padding: 32px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(212, 195, 190, 0.2);
+  border-radius: 8px;
+
+  background: var(--reservas-surface-container-lowest);
+
+  box-shadow: var(--reservas-shadow);
+}
+
+.decorativeIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 128px;
+  height: 128px;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  color: var(--reservas-primary);
+
+  opacity: 0.05;
+
+  font-size: 120px;
+  line-height: 120px;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.twoColumns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.submitArea {
+  padding-top: 16px;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .twoColumns {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

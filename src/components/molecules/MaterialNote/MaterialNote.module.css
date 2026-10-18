@@ -1,0 +1,110 @@
+.note {
+  padding: 28px;
+
+  border-radius: var(--radius-xl);
+
+  border-left: 3px solid var(--color-secondary);
+
+  background: var(--color-surface-container-low);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 18px;
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: var(--radius-default);
+
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.heading {
+  color: var(--color-primary);
+
+  font: 700 12px/16px var(--font-body);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.botanical {
+  margin:
+    0
+    0
+    18px;
+
+  padding-bottom: 14px;
+
+  border-bottom: 1px dashed
+    var(--color-outline-variant);
+
+  color: var(--color-secondary);
+
+  font: italic 400 14px/20px var(--font-body);
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.paragraphs p {
+  margin: 0;
+
+  color: var(--color-on-surface-variant);
+
+  font-size: 15px/26px var(--font-body);
+}
+
+.specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin: 22px 0 0;
+
+  padding-top: 18px;
+
+  border-top: 1px solid
+    var(--color-outline-variant);
+}
+
+.spec {
+  flex: 1 1 130px;
+
+  padding: 10px 14px;
+
+  border-radius: var(--radius-lg);
+
+  background: var(--color-surface-container-lowest);
+}
+
+.spec dt {
+  margin-bottom: 4px;
+
+  color: var(--color-outline);
+
+  font: 700 10px/14px var(--font-body);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.spec dd {
+  margin: 0;
+
+  color: var(--color-primary);
+
+  font: 600 14px/20px var(--font-body);
+}

@@ -1,0 +1,22 @@
+.layout {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  overflow-x: hidden;
+  background-image: var(--background-paper);
+}
+
+.grainOverlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+
+  opacity: 0.03;
+
+  background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+}
+
+.main {
+  padding-top: var(--navbar-height);
+}

@@ -1,0 +1,14 @@
+.eyebrow {
+  display: block;
+  margin: 0 0 16px;
+
+  color: var(--reservas-secondary);
+
+  font-family: var(--font-body, "Work Sans", sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
