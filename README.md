@@ -1,6 +1,65 @@
 # Edward's Carpentry
 
+[![Live Demo](https://img.shields.io/badge/live_demo-edwards--carpentry.vercel.app-4a2c1d?style=flat-square&labelColor=ffffff)](https://edwards-carpentry.vercel.app)
+[![React](https://img.shields.io/badge/React_19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Vite](https://img.shields.io/badge/Vite_7-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev)
+[![Vercel](https://img.shields.io/badge/deployed_on-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://edwards-carpentry.vercel.app)
+
 Marketing site for **Edward's Carpentry**, a traditional woodworking shop based in Baracoa, Cuba. The site showcases custom furniture, doors, windows, flooring, and architectural carpentry, with a browsable catalog and a booking flow that hands off to WhatsApp.
+
+**Live demo:** https://edwards-carpentry.vercel.app
+
+## Demo
+
+![Scrolling tour of the landing page: hero, team, wood materials, promo video, testimonials and call to action](docs/demo.gif)
+
+## Screenshots
+
+### Desktop (1440 x 900)
+
+**Landing page - hero with the 25-year warranty claim**
+
+![Desktop hero of the landing page](docs/screenshots/home-01-hero.jpg)
+
+**Catalog - 23 typologies, search and category filters**
+
+![Desktop catalog with search bar and category filters](docs/screenshots/catalog-desktop.jpg)
+
+**Category modal - piece gallery with photo viewer links**
+
+![Desktop category modal showing two pieces](docs/screenshots/catalog-category-modal-desktop.jpg)
+
+**Booking page - project form, workshop info, Leaflet map of Baracoa and WhatsApp handoff**
+
+![Desktop booking page with form and interactive map](docs/screenshots/reservas-desktop.jpg)
+
+**Services page**
+
+![Desktop services page listing delivery, flooring, cladding, ceilings and garage construction](docs/screenshots/servicios-desktop.jpg)
+
+### Mobile (390 x 844)
+
+| Hero | Catalog | Booking |
+| --- | --- | --- |
+| ![Mobile hero](docs/screenshots/mobile-home-hero.jpg) | ![Mobile catalog](docs/screenshots/mobile-catalog.jpg) | ![Mobile booking page](docs/screenshots/mobile-reservas.jpg) |
+
+More captures (full-page desktop/mobile, portfolio, workshop, testimonials, call to action) live in [`docs/screenshots/`](docs/screenshots/).
+
+## Architecture
+
+```mermaid
+flowchart TD
+    U([Visitor]) --> V[Vercel - static dist/ build]
+    V --> S[index.html - React 19 SPA]
+    S --> R{React Router 7 lazy routes}
+    R --> P[Pages: Inicio, Catalogo, Trabajos,<br/>Servicios, Taller, Reservas]
+    P --> D[Content modules src/data/*.ts]
+    P --> IMG[Assets: images and promo video]
+    R --> MAP[Leaflet map - Reservas]
+    P --> WA[WhatsApp handoff wa.me/...]
+    CFG[vercel.json SPA rewrite] -.-> V
+```
 
 ## Features
 
@@ -134,7 +193,15 @@ node compress-images.mjs .         # rewrite files
 
 ## Deployment
 
-The build output is fully static, so `dist/` can be deployed to any static host (Netlify, Vercel, GitHub Pages, Cloudflare Pages, etc.). Because the app uses `BrowserRouter`, configure the host to rewrite unknown paths to `index.html` so client-side routes work on refresh.
+The build output is fully static, so `dist/` can be deployed to any static host (Netlify, Vercel, GitHub Pages, Cloudflare Pages, etc.). Because the app uses `BrowserRouter`, the host must rewrite unknown paths to `index.html` so client-side routes work on a direct load or refresh. `vercel.json` already contains that rewrite:
+
+```json
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
+```
+
+Without it, visiting a deep link such as `/catalog` or `/reservas` directly returns a 404 even though in-app navigation works.
 
 ## License
 
